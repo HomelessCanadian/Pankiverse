@@ -4,7 +4,7 @@
 let hue = 0;
 const gifUrl = 'trans-flag.gif';
 let isShowingGif = false;
-const gifInterval = 30000; // Adjust this to your desired interval, 30k sec = 500mins
+const gifInterval = 600000; // 10 minutes in milliseconds
 const gifChance = 0.5; // 50% chance of showing the GIF
 
 function changeColor() {
@@ -53,7 +53,7 @@ function checkAndResetGif() {
             });
             setTimeout(() => {
                 isShowingGif = null; // Set to null to indicate it can be toggled again
-            }, 30000); // 30 seconds cooldown
+            }, gifInterval); // 10 minutes cooldown
         }
     } else if (isShowingGif === null) {
         console.log('GIF is in cooldown, not toggling');
@@ -66,7 +66,7 @@ function checkAndResetGif() {
 // Color changing interval (every 10ms)
 setInterval(changeColor, 10);
 
-// GIF check interval (every 30 seconds)
+// GIF check interval (every 10 minutes)
 setInterval(checkAndResetGif, gifInterval);
 
 // Initial check to potentially show GIF immediately

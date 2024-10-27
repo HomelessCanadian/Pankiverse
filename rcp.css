@@ -73,6 +73,11 @@ p {
     text-indent: 20px;
     margin-bottom: 15px;
 }
+pr {
+    text-indent: 20px;
+    margin-bottom: 15px;
+    color: #ff0e0e;
+}
 
 .story-section {
     background-color: #f0f0f0;
