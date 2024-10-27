@@ -22,9 +22,21 @@
             padding: 10px;
             border: 1px solid #ccc;
         }
+        #warning-banner {
+            background-color: #ffcccc;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
+        <div id="warning-banner">
+        <strong>Warning:</strong> This file was generated using Perplexity AI. 16 Oct 2024
+        <noscript>
+            <span class="javascript-warning">JavaScript is disabled. Some features may not work correctly.</span>
+        </noscript>
+    </div>
     <h1>Dialog to JSON Converter</h1>
     <textarea id="input" placeholder="Enter your dialog here. Each line should start with a character name followed by a colon."></textarea>
     <button onclick="convertToJSON()">Convert to JSON</button>
@@ -51,5 +63,7 @@
             document.getElementById('output').textContent = output;
         }
     </script>
+        <script src="bannerPride.js"></script>
+    <script src="noscriptWarning.js"></script>
 </body>
 </html>
