@@ -44,3 +44,10 @@ body {
 .btn:hover {
     background-color: #3e8e41;
 }
+            #warning-banner {
+            background-color: #ffcccc;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
