@@ -52,3 +52,9 @@ button:hover {
 .btn {
     margin-bottom: 20px;
 }
+            #warning-banner {
+            background-color: #ffcccc;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
