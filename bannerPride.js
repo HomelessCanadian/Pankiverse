@@ -1,11 +1,11 @@
-// bannerPride.js for Pankiverse/For all your rainbow warning banner needs
+// bannerPride.js for Pankiverse/AI-Generated recipe book - fancy warning label for AI generated content
 // Copyright (c) 2024 llama-3.1-sonar-large-128k-online
 
 let hue = 0;
 const gifUrl = 'trans-flag.gif';
 let isShowingGif = false;
-const gifInterval = 3000000000; // 3000000 seconds between checks
-const gifChance = 0.50; // 99% chance of showing the GIF
+const gifInterval = 300000000; // 3000000 seconds between checks
+const gifChance = 0.5; // 99% chance of showing the GIF
 
 function changeColor() {
     if (!isShowingGif) {
@@ -49,13 +49,18 @@ function checkAndResetGif() {
             const highlights = document.querySelectorAll('#warning-banner');
             highlights.forEach(function (element) {
                 element.style.backgroundImage = 'none';
+                element.style.backgroundColor = `hsl(${hue}, 100%, 80%)`; // Reset background color
             });
+            console.log('GIF stopped and background color reset');
+        } else {
+            console.log('GIF will continue to show');
         }
     } else {
         console.log('GIF is not showing, attempting to toggle');
         toggleGif();
     }
 }
+
 
 // Color changing interval (every 10ms)
 setInterval(changeColor, 10);
