@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog to JSON Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+        #output {
+            white-space: pre-wrap;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dialog to JSON Converter</h1>
+    <textarea id="input" placeholder="Enter your dialog here. Each line should start with a character name followed by a colon."></textarea>
+    <button onclick="convertToJSON()">Convert to JSON</button>
+    <h2>Output:</h2>
+    <div id="output"></div>
+
+    <script>
+        function convertToJSON() {
+            const input = document.getElementById('input').value;
+            const lines = input.split('\n');
+            const dialog = [];
+
+            lines.forEach(line => {
+                const [character, ...textParts] = line.split(':');
+                if (character && textParts.length > 0) {
+                    dialog.push({
+                        character: character.trim(),
+                        text: textParts.join(':').trim()
+                    });
+                }
+            });
+
+            const output = JSON.stringify(dialog, null, 2);
+            document.getElementById('output').textContent = output;
+        }
+    </script>
+</body>
+</html>

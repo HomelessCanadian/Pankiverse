@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Columns</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: rgb(0, 200, 255);
+        }
+        .container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            display: flex;
+            filter: blur(10px);
+        }
+        .column {
+            width: 50px;
+            height: 100vh;
+            margin-right: 20px; /* Increased spacing between columns */
+            position: absolute;
+        }
+        .pink {
+            background-color: rgb(250, 166, 203);
+        }
+        .white {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container"></div>
+    <script>
+        const container = document.getElementById('container');
+        const columnWidth = 70; // 50px width + 20px margin-right
+        const columnCount = Math.ceil(window.innerWidth / columnWidth) + 2;
+
+        for (let i = 0; i < columnCount; i++) {
+            createColumn(i * columnWidth);
+        }
+
+        function createColumn(leftPosition) {
+            const column = document.createElement('div');
+            column.classList.add('column');
+            column.classList.add(leftPosition % 140 === 0 ? 'pink' : 'white');
+            column.style.left = `${leftPosition}px`;
+            container.appendChild(column);
+        }
+
+        function animateColumns() {
+            const columns = document.querySelectorAll('.column');
+            columns.forEach(column => {
+                let leftPosition = parseFloat(column.style.left);
+                leftPosition -= 1;
+                if (leftPosition <= -columnWidth) {
+                    leftPosition += columnWidth * columnCount;
+                }
+                column.style.left = `${leftPosition}px`;
+            });
+            requestAnimationFrame(animateColumns);
+        }
+
+        animateColumns();
+    </script>
+</body>
+</html>
