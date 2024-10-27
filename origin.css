@@ -20,3 +20,9 @@ body {
   h1, h2 {
     color: #2c3e50;
   }
+            #warning-banner {
+            background-color: #ffcccc;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
