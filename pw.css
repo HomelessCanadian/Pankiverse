@@ -44,10 +44,15 @@ body {
 .btn:hover {
     background-color: #3e8e41;
 }
-            #warning-banner {
-            background-color: #ffcccc;
-            padding: 10px;
-            text-align: center;
-            font-weight: bold;
-        }
+#warning-banner {
+ background-color: #ffcccc;
+ padding: 10px;
+ text-align: center;
+ font-weight: bold;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ z-index: 9999;
+}
 
