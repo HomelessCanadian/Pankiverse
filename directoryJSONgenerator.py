@@ -9,17 +9,20 @@ class Node:
         self.children = []
         self.type = 'directory' if size is None else 'file'
 
-    def to_html(self, level=0):
+    def to_html(self, level=0, base_url=''):
         indent = ' ' * (level * 4)
         log_indent = f'Indent level {level}: {self.name}'
         print(log_indent)
         if self.type == 'file':
-            return f'{indent}<li><a href="{self.path}">{self.name}</a> ({self.size} bytes)</li>\n'
+            relative_path = os.path.relpath(self.path, start=base_url)
+            return f'{indent}<li><a href="{relative_path}">{self.name}</a> ({self.size} bytes)</li>\n'
         else:
-            children_html = ''.join([child.to_html(level + 1) for child in self.children])
+            children_html = ''.join([child.to_html(level + 1, base_url=base_url) for child in self.children])
             return f'{indent}<li><span>{self.name}</span>\n{indent}<ul>\n{children_html}{indent}</ul>\n{indent}</li>\n'
 
 def collect_info(path):
+    if not isinstance(path, (str, bytes, os.PathLike)):
+        raise ValueError("Path must be a string, bytes, or os.PathLike object")
     root = Node(os.path.basename(path), path=path)
     stack = [(root, path)]
     total_size = 0
@@ -46,16 +49,19 @@ def collect_info(path):
     return root, total_size
 
 def main(directory):
+    if not isinstance(directory, (str, bytes, os.PathLike)):
+        raise ValueError("Directory must be a string, bytes, or os.PathLike object")
     root_node, total_size = collect_info(directory)
     total_space = 391680654347
     free_space = total_space - total_size
     random_serial = f"{random.randint(1000, 9999):04X}-{random.randint(1000, 9999):04X}"
+    base_url = os.path.dirname(os.path.abspath(directory))
     with open('directory_listing.html', 'w') as f:
         f.write('<html>\n<head>\n<title>Directory Listing</title>\n</head>\n<body>\n')
         f.write('<h2>Directory Listing</h2>\n')
         f.write(f'<p>Volume in drive C has no label. Volume Serial Number is {random_serial}</p>\n')
         f.write('<ul>\n')
-        f.write(root_node.to_html())
+        f.write(root_node.to_html(base_url=base_url))
         f.write('</ul>\n')
         f.write(f'<p>{total_size} bytes used, {free_space} bytes free</p>\n')
         f.write('</body>\n</html>\n')
@@ -66,4 +72,5 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python script.py <directory>")
         sys.exit(1)
-    main(sys.argv[1])
+    directory = sys.argv[1]  # Correctly access the first command line argument
+    main(directory)
