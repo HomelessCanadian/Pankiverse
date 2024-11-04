@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directory Listing to JSON Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        textarea {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #output {
+            white-space: pre-wrap;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="warning-banner">
+        <strong>Warning:</strong> This file was generated using Perplexity AI. 30 Oct 2024 <br>
+        <noscript>
+            <span class="javascript-warning">JavaScript is disabled. Some features may not work correctly.</span>
+        </noscript>
+    <div class="container">
+        <h1>Directory Listing to JSON Converter</h1>
+        <h2>This tool didn't fill its purpose and is useless.</h2>
+        <textarea id="input" placeholder="Paste your directory listing here..."></textarea>
+        <button onclick="convertToJSON()">Convert to JSON</button>
+        <div id="output"></div>
+    </div>
+    <script src="../Scripts/bannerPride.js"></script>
+    <script src="../Scripts/noscriptWarning.js"></script>
+    <script>
+        function convertToJSON() {
+            const input = document.getElementById('input').value;
+            const lines = input.split('\n');
+            const result = [];
+            let totalFiles = 0;
+            let totalDirs = 0;
+            let totalBytes = 0;
+
+            for (let line of lines) {
+                line = line.trim();
+                if (line && !line.startsWith('Volume in') && !line.endsWith('bytes free')) {
+                    const parts = line.split(/\s+/);
+                    if (parts.length >= 4) {
+                        const date = parts[0];
+                        const time = parts[1];
+                        const isDirectory = parts[2] === '<DIR>';
+                        const name = parts.slice(isDirectory ? 3 : 4).join(' ');
+                        const size = isDirectory ? 0 : parseInt(parts[3].replace(',', ''));
+
+                        if (name !== '.' && name !== '..') {
+                            result.push({
+                                type: isDirectory ? 'directory' : 'file',
+                                name: name,
+                                size: size,
+                                date: date,
+                                time: time
+                            });
+
+                            if (isDirectory) {
+                                totalDirs++;
+                            } else {
+                                totalFiles++;
+                                totalBytes += size;
+                            }
+                        }
+                    }
+                }
+            }
+
+            const output = JSON.stringify(result, null, 2);
+            document.getElementById('output').textContent = output;
+
+            // Update the summary
+            const summary = `${totalFiles} File(s) ${totalBytes.toLocaleString()} bytes\n${totalDirs} Dir(s)`;
+            document.getElementById('output').textContent += '\n\n' + summary;
+        }
+    </script>
+</body>
+</html>

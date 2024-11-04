@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" data-color-scheme="dark"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"><title>Perplexity Labs</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="next-head-count" content="3"><style type="text/css">:root, :host {
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid";
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular";
+  --fa-font-light: normal 300 1em/1 "Font Awesome 6 Light";
+  --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Thin";
+  --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+}
+
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+  overflow: visible;
+  box-sizing: content-box;
+}
+
+.svg-inline--fa {
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-2xs {
+  vertical-align: 0.1em;
+}
+.svg-inline--fa.fa-xs {
+  vertical-align: 0em;
+}
+.svg-inline--fa.fa-sm {
+  vertical-align: -0.0714285705em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.2em;
+}
+.svg-inline--fa.fa-xl {
+  vertical-align: -0.25em;
+}
+.svg-inline--fa.fa-2xl {
+  vertical-align: -0.3125em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-li {
+  width: var(--fa-li-width, 2em);
+  top: 0.25em;
+}
+.svg-inline--fa.fa-fw {
+  width: var(--fa-fw-width, 1.25em);
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: var(--fa-counter-background-color, #ff253a);
+  border-radius: var(--fa-counter-border-radius, 1em);
+  box-sizing: border-box;
+  color: var(--fa-inverse, #fff);
+  line-height: var(--fa-counter-line-height, 1);
+  max-width: var(--fa-counter-max-width, 5em);
+  min-width: var(--fa-counter-min-width, 1.5em);
+  overflow: hidden;
+  padding: var(--fa-counter-padding, 0.25em 0.5em);
+  right: var(--fa-right, 0);
+  text-overflow: ellipsis;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-counter-scale, 0.25));
+          transform: scale(var(--fa-counter-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: var(--fa-bottom, 0);
+  right: var(--fa-right, 0);
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: var(--fa-bottom, 0);
+  left: var(--fa-left, 0);
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  top: var(--fa-top, 0);
+  right: var(--fa-right, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: var(--fa-left, 0);
+  right: auto;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: 0.625em;
+  line-height: 0.1em;
+  vertical-align: 0.225em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+  line-height: 0.0833333337em;
+  vertical-align: 0.125em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+  line-height: 0.0714285718em;
+  vertical-align: 0.0535714295em;
+}
+
+.fa-lg {
+  font-size: 1.25em;
+  line-height: 0.05em;
+  vertical-align: -0.075em;
+}
+
+.fa-xl {
+  font-size: 1.5em;
+  line-height: 0.0416666682em;
+  vertical-align: -0.125em;
+}
+
+.fa-2xl {
+  font-size: 2em;
+  line-height: 0.03125em;
+  vertical-align: -0.1875em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: var(--fa-li-margin, 2.5em);
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: calc(var(--fa-li-width, 2em) * -1);
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.08em);
+  padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+}
+
+.fa-pull-left {
+  float: left;
+  margin-right: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right {
+  float: right;
+  margin-left: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  -webkit-animation-name: fa-beat;
+          animation-name: fa-beat;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  -webkit-animation-name: fa-bounce;
+          animation-name: fa-bounce;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  -webkit-animation-name: fa-fade;
+          animation-name: fa-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-beat-fade {
+  -webkit-animation-name: fa-beat-fade;
+          animation-name: fa-beat-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-flip {
+  -webkit-animation-name: fa-flip;
+          animation-name: fa-flip;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  -webkit-animation-name: fa-shake;
+          animation-name: fa-shake;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 2s);
+          animation-duration: var(--fa-animation-duration, 2s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, steps(8));
+          animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+.fa-bounce,
+.fa-fade,
+.fa-beat-fade,
+.fa-flip,
+.fa-pulse,
+.fa-shake,
+.fa-spin,
+.fa-spin-pulse {
+    -webkit-animation-delay: -1ms;
+            animation-delay: -1ms;
+    -webkit-animation-duration: 1ms;
+            animation-duration: 1ms;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+    -webkit-transition-duration: 0s;
+            transition-duration: 0s;
+  }
+}
+@-webkit-keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@-webkit-keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@-webkit-keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@-webkit-keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@-webkit-keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@-webkit-keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  -webkit-transform: rotate(var(--fa-rotate-angle, none));
+          transform: rotate(var(--fa-rotate-angle, none));
+}
+
+.fa-stack {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: var(--fa-stack-z-index, auto);
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+.sr-only,
+.fa-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:not(:focus),
+.fa-sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse,
+.fa-duotone.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}</style><link rel="icon" href="https://labs.perplexity.ai/favicon.ico"><meta name="theme-color" content="#000000"><link rel="preload" href="https://labs.perplexity.ai/_next/static/media/80d90e1e722a80dc-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"><link rel="preload" href="https://labs.perplexity.ai/_next/static/media/3c0a20a48548ae37-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"><link rel="preload" href="https://labs.perplexity.ai/_next/static/media/b06d54d0a237533a-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"><script id="dark-or-light-mode" data-nscript="beforeInteractive" type="text/javascript">
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+              document.documentElement.classList.add('dark')
+            } else {
+              document.documentElement.classList.remove('dark')
+            }
+
+            // listening for theme changing from system
+            if(!localStorage.theme) {
+              window
+              .matchMedia("(prefers-color-scheme: dark)")
+              .addEventListener("change", function (e) {
+                const colorScheme = e.matches ? "dark" : "light";
+
+                if (colorScheme === "dark") {
+                  document.documentElement.classList.add('dark')
+                } else {
+                  document.documentElement.classList.remove('dark')
+                }
+              });
+            }
+          </script><link rel="preload" href="../Stylesheets/e0aa5a0ef63a2680.css" as="style"><link rel="stylesheet" href="../Stylesheets/e0aa5a0ef63a2680.css" data-n-g=""><noscript data-n-css=""></noscript><script defer="defer" nomodule="" src="Perplexity%20Labs_files/polyfills-c67a75d1b6f99dc8.js" type="text/javascript"></script><script src="Perplexity%20Labs_files/webpack-726ffe8b3e5451cc.js" defer="defer" type="text/javascript"></script><script src="Perplexity%20Labs_files/framework-e023da760628d0cd.js" defer="defer" type="text/javascript"></script><script src="Perplexity%20Labs_files/main-2f474aa45b3d8a07.js" defer="defer" type="text/javascript"></script><script src="Perplexity%20Labs_files/_app-fc721e4605ab9754.js" defer="defer" type="text/javascript"></script><script src="Perplexity%20Labs_files/3bf37b2b-c9f0fe4f31875a30.js" defer="defer" type="text/javascript"></script><script src="Perplexity%20Labs_files/4362-b3b1d64a8a09b8b5.js" defer="defer" type="text/javascript"></script><script src="Perplexity%20Labs_files/index-5ba6421f034dd39e.js" defer="defer" type="text/javascript"></script><script src="Perplexity%20Labs_files/_buildManifest.js" defer="defer" type="text/javascript"></script><script src="Perplexity%20Labs_files/_ssgManifest.js" defer="defer" type="text/javascript"></script><style data-styled="active" data-styled-version="6.1.13"></style></head><body class="__variable_0e7774 __variable_a82850 __variable_b44320"><div id="__next"><main class="dark"><div class="h-full border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-background dark:bg-backgroundDark"><div class="flex h-full min-h-screen flex-col border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-background dark:bg-backgroundDark"><div class="sticky top-0 z-20 border-b border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-background dark:bg-backgroundDark"><div class="mx-auto w-full max-w-screen-lg md:px-md"><div class="z-20 flex items-center justify-between px-md py-md md:border-x border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-background dark:bg-backgroundDark"><div class="flex items-center"><div class="md:mr-md md:border-r md:pr-md border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-transparent"><div class="h-auto group w-40 md:w-52"><svg viewBox="0 0 1456 187" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M311.555 34.9571C330.01 34.9571 344.672 45.7532 344.672 65.084C344.672 84.4148 330.01 95.3568 311.555 95.3568H279.094V140H265.817V34.9571H311.555ZM279.094 84.0501H309.585C322.643 84.0501 331.396 77.1931 331.396 65.157C331.396 53.0478 322.643 46.2638 309.585 46.2638H279.094V84.0501ZM353.444 102.797C353.444 77.7037 367.669 63.9169 390.209 63.9169C412.823 63.9169 425.151 77.8496 425.151 99.5877V105.934H365.918C366.137 121.399 375.255 131.465 390.209 131.465C404.434 131.465 410.926 123.587 412.093 116.73H423.619V118.918C421.868 128.037 413.187 141.751 390.355 141.751C367.815 141.751 353.444 127.964 353.444 102.797ZM366.064 95.8674H412.896C412.75 83.2477 405.09 74.1294 390.136 74.1294C375.474 74.1294 367.085 83.3936 366.064 95.8674ZM447.732 65.6676H460.133V76.1719H461.3C464.218 69.8985 469.908 65.4487 483.257 65.4487H500.691V76.3907H483.549C467.501 76.3907 460.571 84.7795 460.571 101.849V140H447.732V65.6676ZM517.092 169.179V65.6676H529.638V75.8801H530.805C536.349 67.3453 545.322 63.9898 555.826 63.9898C575.157 63.9898 589.965 77.1202 589.965 102.87C589.965 128.547 575.157 141.678 555.826 141.678C545.541 141.678 536.641 138.395 531.097 130.152H529.93V169.179H517.092ZM529.492 102.87C529.492 120.888 539.121 131.028 553.2 131.028C567.425 131.028 576.981 120.888 576.981 102.87C576.981 84.7795 567.425 74.64 553.2 74.64C539.121 74.64 529.492 84.7795 529.492 102.87ZM637.266 34.9571V129.642H651.272V140H605.899V129.642H624.428V45.2426H610.276V34.9571H637.266ZM665.9 102.797C665.9 77.7037 680.125 63.9169 702.665 63.9169C725.278 63.9169 737.606 77.8496 737.606 99.5877V105.934H678.374C678.593 121.399 687.711 131.465 702.665 131.465C716.89 131.465 723.382 123.587 724.549 116.73H736.074V118.918C734.324 128.037 725.643 141.751 702.811 141.751C680.27 141.751 665.9 127.964 665.9 102.797ZM678.52 95.8674H725.351C725.205 83.2477 717.546 74.1294 702.592 74.1294C687.93 74.1294 679.541 83.3936 678.52 95.8674ZM752.566 65.6676H765.696L786.851 93.3143H788.018L810.85 65.6676H823.762V67.856L795.313 102.36L822.522 137.812V140H809.391L787.289 111.186H786.121L762.414 140H749.502V137.812L778.827 102.214L752.566 67.856V65.6676ZM871.43 65.6676V129.642H885.436V140H840.063V129.642H858.591V75.953H844.44V65.6676H871.43ZM857.205 52.9749V38.8962H872.087V52.9749H857.205ZM896.344 65.6676H919.613V43.8566H932.452V65.6676H962.068V76.0989H932.452V127.745L933.619 128.912H961.849V140H938.725C926.543 140 919.613 133.945 919.613 121.836V76.0989H896.344V65.6676ZM973.245 65.6676H986.302L1010.01 124.681H1011.18L1034.81 65.6676H1047.5V67.856L1004.76 169.179H991.992V166.99L1003.66 139.927L973.245 67.856V65.6676ZM1116.67 34.9571H1130.09V128.256H1189.03V140H1116.67V34.9571ZM1205.12 86.3114C1206.66 72.5245 1218.55 63.9169 1237.95 63.9169C1257.21 63.9169 1268.59 72.5245 1268.59 91.0529V140H1256.62V129.787H1255.46C1252.25 135.477 1244.66 141.605 1229.05 141.605C1212.78 141.605 1201.55 133.508 1201.55 119.648C1201.55 104.913 1212.78 98.4205 1227.96 96.5239L1256.19 93.0225V90.3235C1256.19 78.725 1249.84 74.1294 1237.66 74.1294C1225.4 74.1294 1218.18 78.725 1217.16 88.4998H1205.12V86.3114ZM1214.31 119.064C1214.31 126.797 1220.88 131.246 1231.17 131.246C1244.88 131.246 1256.19 123.952 1256.19 107.539V102.943L1230.51 106.299C1220.52 107.612 1214.31 111.259 1214.31 119.064ZM1291.61 34.9571H1304.44V75.5153H1305.61C1311.16 67.1995 1320.06 63.9898 1330.34 63.9898C1349.67 63.9898 1364.48 77.1202 1364.48 102.87C1364.48 128.547 1349.67 141.678 1330.34 141.678C1319.84 141.678 1310.86 138.322 1305.32 129.787H1304.15V140H1291.61V34.9571ZM1304.01 102.87C1304.01 120.888 1313.64 131.028 1327.71 131.028C1341.94 131.028 1351.49 120.888 1351.49 102.87C1351.49 84.7795 1341.94 74.64 1327.71 74.64C1313.64 74.64 1304.01 84.7795 1304.01 102.87ZM1381.07 85.1443C1381.07 71.941 1392.52 63.9898 1411.78 63.9898C1431.18 63.9898 1443 71.941 1444.17 86.0926V88.281H1432.42C1431.91 77.9955 1423.74 74.1294 1411.85 74.1294C1400.04 74.1294 1393.4 77.9226 1393.4 84.8525C1393.4 91.7824 1399.09 94.4085 1407.19 95.3568L1419.95 96.9616C1434.98 98.7853 1445.41 105.132 1445.41 118.773C1445.41 132.487 1434.54 141.678 1413.9 141.678C1393.25 141.678 1380.34 132.559 1379.39 119.064V116.876H1391.36C1392.09 126.943 1401.28 131.538 1413.9 131.538C1426.59 131.538 1433.01 126.87 1433.01 119.429C1433.01 112.134 1426.95 108.852 1417.18 107.612L1404.41 106.007C1390.41 104.329 1381.07 98.2017 1381.07 85.1443Z" class=" block fill-textMain dark:fill-textMainDark"></path><path d="M59.4967 39.8367C30.9654 39.8367 7.83624 62.9671 7.83624 91.5C7.83624 120.033 30.9654 143.163 59.4967 143.163C83.9985 143.163 104.516 126.105 109.823 103.216H117.84C112.399 130.466 88.3457 151 59.4967 151C26.6376 151 0 124.361 0 91.5C0 58.639 26.6376 32 59.4967 32C91.0393 32 116.849 56.5473 118.866 87.5817H155.879L123.292 54.9276L128.838 49.3918L161.428 82.0483L161.387 35.9218L169.223 35.9149L169.264 82.0641L201.87 49.3918L207.416 54.9276L174.829 87.5817H221V95.4183H174.771L207.416 128.131L201.87 133.667L169.281 101.011L169.321 147.157L161.485 147.163L161.444 100.993L128.838 133.667L123.292 128.131L155.937 95.4183H129.748V95.3791H84.6892V95.4183H59.495V87.5817H111.011C109.008 60.8792 86.7098 39.8367 59.4967 39.8367Z" class=" block fill-textMain dark:fill-textMainDark"></path></svg></div></div><div class="default font-sans text-base text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><span class="hidden font-mono text-[14px] font-bold uppercase tracking-widest md:inline">Playground</span></div></div><div class="flex items-center gap-x-md"></div><div class="flex items-center gap-sm"><a role="button" class="bg-offsetPlus dark:bg-offsetPlusDark text-textMain dark:text-textMainDark  md:hover:text-textOff md:dark:hover:text-textOffDark font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out font-sans  select-none items-center relative group/button  justify-center text-center items-center rounded cursor-point active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm px-sm font-medium h-8" target="_blank" style="-webkit-tap-highlight-color:transparent" href="https://pplx.ai/sJYErn2"><div class="flex items-center min-w-0 justify-center gap-xs"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="arrow-up-right-from-square" class="svg-inline--fa fa-arrow-up-right-from-square fa-fw fa-1x " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M304 24c0 13.3 10.7 24 24 24H430.1L207 271c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l223-223V184c0 13.3 10.7 24 24 24s24-10.7 24-24V24c0-13.3-10.7-24-24-24H328c-13.3 0-24 10.7-24 24zM72 32C32.2 32 0 64.2 0 104V440c0 39.8 32.2 72 72 72H408c39.8 0 72-32.2 72-72V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V440c0 13.3-10.7 24-24 24H72c-13.3 0-24-10.7-24-24V104c0-13.3 10.7-24 24-24H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H72z"></path></svg><div class="text-align-center relative truncate leading-loose">pplx-api</div></div></a><a role="button" class="bg-super dark:bg-superDark dark:text-backgroundDark text-white hover:opacity-80 font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out font-sans  select-none items-center relative group/button  justify-center text-center items-center rounded cursor-point active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm px-sm font-medium h-8" style="-webkit-tap-highlight-color:transparent" href="https://www.perplexity.ai/"><div class="flex items-center min-w-0 justify-center gap-xs"><div class="text-align-center relative truncate leading-loose">Try Perplexity</div></div></a></div></div></div></div><div class="flex h-full grow"><div class="grow"><div class="mx-auto flex h-full w-full max-w-screen-lg grow flex-col md:px-md"><div class="grow pt-md md:border-x md:pt-lg border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-transparent"><div class="default font-sans text-base text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><div class="flex w-full p-md md:p-lg justify-end border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-transparent"><div class="w-full flex flex-col justify-start gap-md md:flex-row"><div class="max-w-full break-words rounded-lg border px-md py-sm text-left shadow-sm [word-break:break-word] border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-offset dark:bg-offsetDark"><div class="light font-sans text-base font-medium text-textOff dark:text-textOffDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark">LLM served by Perplexity Labs</div><div class="default font-sans text-base text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><div class="prose dark:prose-invert inline leading-normal break-words min-w-0 [word-break:break-word]"><span>Hello! How can I help you?</span></div></div></div><div class="ml-sm mt-xs flex max-w-full items-start gap-x-xs"><button type="button" class="focus-visible:bg-offsetPlus dark:focus-visible:bg-offsetPlusDark md:hover:bg-offsetPlus text-textOff dark:text-textOffDark md:hover:text-textMain dark:md:hover:bg-offsetPlusDark  dark:md:hover:text-textMainDark font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out font-sans  select-none items-center relative group/button  justify-center text-center items-center rounded-full cursor-point active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm px-sm font-medium h-8" data-state="closed"><div class="flex items-center min-w-0 justify-center gap-xs"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clipboard" class="svg-inline--fa fa-clipboard fa-fw fa-1x " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"></path></svg><div class="text-align-center relative truncate leading-loose">Copy</div></div></button></div><div class="mt-sm flex justify-end gap-x-xs"></div></div></div></div><div class="flex w-full p-md md:p-lg border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-transparent"><div class="w-full"><div class="max-w-full text-right"><div class="max-w-full break-words rounded-lg border px-md py-sm text-left shadow-sm [word-break:break-word] inline-block border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-background dark:bg-backgroundDark"><div class="default font-sans text-base text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><div class="prose dark:prose-invert inline leading-normal break-words min-w-0 [word-break:break-word]"><span>
+<div class="mt-sm flex justify-end gap-x-xs"></div></div></div></div><div class="flex w-full p-md md:p-lg border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-transparent"><div class="w-full"><div class="max-w-full text-right"><div class="max-w-full break-words rounded-lg border px-md py-sm text-left shadow-sm [word-break:break-word] inline-block border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-background dark:bg-backgroundDark"><div class="default font-sans text-base text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><div class="prose dark:prose-invert inline leading-normal break-words min-w-0 [word-break:break-word]"><span>can you explain the meaning behind the lyrics "call me nas but the hood call me doobie"</span></div></div></div></div></div></div><div class="flex w-full p-md md:p-lg justify-end border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-transparent"><div class="w-full flex flex-col justify-start gap-md md:flex-row"><div class="max-w-full text-right"><div class="max-w-full break-words rounded-lg border px-md py-sm text-left shadow-sm [word-break:break-word] border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-offset dark:bg-offsetDark"><div class="light font-sans text-base font-medium text-textOff dark:text-textOffDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark">LLM served by Perplexity Labs</div><div class="default font-sans text-base text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><div class="prose dark:prose-invert inline leading-normal break-words min-w-0 [word-break:break-word]"><span>The
+ lyrics "You call me Nas, but the hood call me Doobie" from Lil Nas X's 
+song "Industry Baby" (feat. Jack Harlow) carry a significant meaning 
+that reflects Lil Nas X's identity and his relationship with his 
+community.</span>
+<h2 class="mb-2 mt-6 text-lg first:mt-3">Dual Identity</h2>
+<ul class="marker:text-textOff list-disc pl-8">
+<li index="0"><span>The line highlights the dual identity that Lil Nas X
+ operates under. "Nas" is the stage name and public persona that the 
+wider world, including his fans and the music industry, knows him by.</span></li>
+<li index="1"><span>"Doobie," on the other hand, is a nickname that is 
+more personal and specific to his community or "the hood." This nickname
+ suggests a deeper, more intimate connection with the people who know 
+him from his roots.</span></li>
+</ul>
+<h2 class="mb-2 mt-6 text-lg first:mt-3">Community Recognition</h2>
+<ul class="marker:text-textOff list-disc pl-8">
+<li index="0"><span>The use of "Doobie" by "the hood" indicates that 
+within his community, he is recognized and respected under this name. It
+ signifies a level of authenticity and acceptance from the people who 
+have known him before his rise to fame.</span></li>
+<li index="1"><span>This contrast between the public persona ("Nas") and
+ the community nickname ("Doobie") underscores the idea that Lil Nas X 
+has maintained a strong connection to his roots despite his success.</span></li>
+</ul>
+<h2 class="mb-2 mt-6 text-lg first:mt-3">Authenticity and Roots</h2>
+<ul class="marker:text-textOff list-disc pl-8">
+<li index="0"><span>The line also serves as a statement of authenticity.
+ By acknowledging that his community calls him "Doobie," Lil Nas X is 
+reaffirming his connection to his origins and the people who have 
+supported him from the beginning. This helps to ground his identity and 
+remind listeners that despite his fame, he remains true to where he came
+ from.</span></li>
+</ul>
+<span>In summary, the lyrics "You call me Nas, but the hood call me 
+Doobie" reflect Lil Nas X's dual identity, his strong connection to his 
+community, and his commitment to staying true to his roots even as he 
+navigates the broader music industry.</span></div></div></div><div class="ml-sm mt-xs flex max-w-full items-start gap-x-xs"><button type="button" class="focus-visible:bg-offsetPlus dark:focus-visible:bg-offsetPlusDark md:hover:bg-offsetPlus text-textOff dark:text-textOffDark md:hover:text-textMain dark:md:hover:bg-offsetPlusDark  dark:md:hover:text-textMainDark font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out font-sans  select-none items-center relative group/button  justify-center text-center items-center rounded-full cursor-point active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm px-sm font-medium h-8" data-state="closed"><div class="flex items-center min-w-0 justify-center gap-xs"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clipboard" class="svg-inline--fa fa-clipboard fa-fw fa-1x " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"></path></svg><div class="text-align-center relative truncate leading-loose">Copy</div></div></button><a role="button" class="focus-visible:bg-offsetPlus dark:focus-visible:bg-offsetPlusDark md:hover:bg-offsetPlus text-textOff dark:text-textOffDark md:hover:text-textMain dark:md:hover:bg-offsetPlusDark  dark:md:hover:text-textMainDark umami--click--ask_perplexity_redirect font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out font-sans  select-none items-center relative group/button  justify-center text-center items-center rounded-full cursor-point active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm px-sm font-medium h-8" target="_blank" href="https://www.perplexity.ai/search?q=can%20you%20explain%20the%20meaning%20behind%20the%20lyrics%20%22call%20me%20nas%20but%20the%20hood%20call%20me%20doobie%22"><div class="flex items-center min-w-0 justify-center gap-xs"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="arrow-right-from-arc" class="svg-inline--fa fa-arrow-right-from-arc fa-fw fa-1x " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M48 256C48 141.1 141.1 48 256 48c13.3 0 24-10.7 24-24s-10.7-24-24-24C114.6 0 0 114.6 0 256S114.6 512 256 512c13.3 0 24-10.7 24-24s-10.7-24-24-24C141.1 464 48 370.9 48 256zM392.3 134.4c-9.7-9-24.9-8.5-33.9 1.3s-8.5 24.9 1.3 33.9L426.9 232H184c-13.3 0-24 10.7-24 24s10.7 24 24 24H426.9l-67.2 62.4c-9.7 9-10.3 24.2-1.3 33.9s24.2 10.3 33.9 1.3l112-104c4.9-4.5 7.7-10.9 7.7-17.6s-2.8-13-7.7-17.6l-112-104z"></path></svg><div class="text-align-center relative truncate leading-loose">Ask Perplexity</div></div></a></div><div class="mt-sm flex justify-end gap-x-xs"></div></div></div></div><div class="flex w-full p-md md:p-lg border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-transparent"><div class="w-full"><div class="max-w-full text-right"><div class="max-w-full break-words rounded-lg border px-md py-sm text-left shadow-sm [word-break:break-word] inline-block border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-background dark:bg-backgroundDark"><div class="default font-sans text-base text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><div class="prose dark:prose-invert inline leading-normal break-words min-w-0 [word-break:break-word]"><span>what could the name "doobie" signify</span></div></div></div></div></div></div><div class="flex w-full p-md md:p-lg justify-end border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-transparent"><div class="w-full flex flex-col justify-start gap-md md:flex-row"><div class="max-w-full text-right"><div class="max-w-full break-words rounded-lg border px-md py-sm text-left shadow-sm [word-break:break-word] border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-offset dark:bg-offsetDark"><div class="light font-sans text-base font-medium text-textOff dark:text-textOffDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark">LLM served by Perplexity Labs</div><div class="default font-sans text-base text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><div class="prose dark:prose-invert inline leading-normal break-words min-w-0 [word-break:break-word]"><span>The name or term "doobie" can have several significations depending on the context in which it is used:</span>
+<h2 class="mb-2 mt-6 text-lg first:mt-3">As a Nickname or Friendly Term</h2>
+<ul class="marker:text-textOff list-disc pl-8">
+<li index="0"><span>In some contexts, "doobie" can be derived from terms
+ like "dude" or "dub," implying a friendly and approachable person or 
+pet. This is often used as a nickname that conveys a sense of 
+camaraderie and friendship, as seen in the context of naming dogs.</span></li>
+</ul>
+<h2 class="mb-2 mt-6 text-lg first:mt-3">As a Reference to Marijuana</h2>
+<ul class="marker:text-textOff list-disc pl-8">
+<li index="0"><span>More commonly, "doobie" is a slang term for a 
+marijuana cigarette or joint. This usage is widely recognized and is 
+often used in informal and colloquial settings.</span></li>
+</ul>
+<h2 class="mb-2 mt-6 text-lg first:mt-3">Cultural Associations</h2>
+<ul class="marker:text-textOff list-disc pl-8">
+<li index="0"><span>The term might also be associated with cultural 
+references, such as the rock band "The Doobie Brothers," although this 
+is more of an indirect influence rather than a direct derivation.</span></li>
+</ul>
+<h2 class="mb-2 mt-6 text-lg first:mt-3">Personality and Characteristics</h2>
+<ul class="marker:text-textOff list-disc pl-8">
+<li index="0"><span>When used as a name for a pet, "doobie" is often 
+associated with a fun-loving, carefree, and energetic personality. It 
+suggests a dog that is playful, laid-back, and has a knack for making 
+people smile.</span></li>
+</ul>
+<span>In summary, the term "doobie" can signify either a friendly and 
+approachable individual or pet, or it can refer to a marijuana 
+cigarette, depending on the context in which it is used.</span></div></div></div><div class="ml-sm mt-xs flex max-w-full items-start gap-x-xs"><button type="button" class="focus-visible:bg-offsetPlus dark:focus-visible:bg-offsetPlusDark md:hover:bg-offsetPlus text-textOff dark:text-textOffDark md:hover:text-textMain dark:md:hover:bg-offsetPlusDark  dark:md:hover:text-textMainDark font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out font-sans  select-none items-center relative group/button  justify-center text-center items-center rounded-full cursor-point active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm px-sm font-medium h-8" data-state="closed"><div class="flex items-center min-w-0 justify-center gap-xs"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clipboard" class="svg-inline--fa fa-clipboard fa-fw fa-1x " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"></path></svg><div class="text-align-center relative truncate leading-loose">Copy</div></div></button><a role="button" class="focus-visible:bg-offsetPlus dark:focus-visible:bg-offsetPlusDark md:hover:bg-offsetPlus text-textOff dark:text-textOffDark md:hover:text-textMain dark:md:hover:bg-offsetPlusDark  dark:md:hover:text-textMainDark umami--click--ask_perplexity_redirect font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out font-sans  select-none items-center relative group/button  justify-center text-center items-center rounded-full cursor-point active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm px-sm font-medium h-8" target="_blank" href="https://www.perplexity.ai/search?q=what%20could%20the%20name%20%22doobie%22%20signify"><div class="flex items-center min-w-0 justify-center gap-xs"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="arrow-right-from-arc" class="svg-inline--fa fa-arrow-right-from-arc fa-fw fa-1x " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M48 256C48 141.1 141.1 48 256 48c13.3 0 24-10.7 24-24s-10.7-24-24-24C114.6 0 0 114.6 0 256S114.6 512 256 512c13.3 0 24-10.7 24-24s-10.7-24-24-24C141.1 464 48 370.9 48 256zM392.3 134.4c-9.7-9-24.9-8.5-33.9 1.3s-8.5 24.9 1.3 33.9L426.9 232H184c-13.3 0-24 10.7-24 24s10.7 24 24 24H426.9l-67.2 62.4c-9.7 9-10.3 24.2-1.3 33.9s24.2 10.3 33.9 1.3l112-104c4.9-4.5 7.7-10.9 7.7-17.6s-2.8-13-7.7-17.6l-112-104z"></path></svg><div class="text-align-center relative truncate leading-loose">Ask Perplexity</div></div></a></div><div class="mt-sm flex justify-end gap-x-xs"></div></div></div></div><div class="flex w-full p-md md:p-lg border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-transparent"><div class="w-full"><div class="max-w-full text-right"><div class="max-w-full break-words rounded-lg border px-md py-sm text-left shadow-sm [word-break:break-word] inline-block border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-background dark:bg-backgroundDark"><div class="default font-sans text-base text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><div class="prose dark:prose-invert inline leading-normal break-words min-w-0 [word-break:break-word]"><span>Would the "hood" calling nas x "doobie" be indicitative of what the british used to call cigarettes</span></div></div></div></div></div></div><div class="flex w-full p-md md:p-lg justify-end border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-transparent"><div class="w-full flex flex-col justify-start gap-md md:flex-row"><div class="max-w-full text-right"><div class="max-w-full break-words rounded-lg border px-md py-sm text-left shadow-sm [word-break:break-word] border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-offset dark:bg-offsetDark"><div class="light font-sans text-base font-medium text-textOff dark:text-textOffDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark">LLM served by Perplexity Labs</div><div class="default font-sans text-base text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><div class="prose dark:prose-invert inline leading-normal break-words min-w-0 [word-break:break-word]"><span>The
+ term "Doobie" in the context of Lil Nas X being called "Doobie" by his 
+hood or family does not relate to the British slang for cigarettes. 
+Here’s a clearer explanation:</span>
+<h2 class="mb-2 mt-6 text-lg first:mt-3">Origin of the Nickname</h2>
+<span>Lil Nas X himself explains that the nickname "Doobie" originated 
+from his childhood. He mentions that he used to watch "Scooby Doo" a 
+lot, and his family and friends started calling him "Doobie" as a 
+result.</span>
+<h2 class="mb-2 mt-6 text-lg first:mt-3">Meaning and Context</h2>
+<span>The nickname "Doobie" is a personal and affectionate term used by 
+those close to him, particularly from his community and family. It does 
+not have any connection to the slang term for a marijuana cigarette or 
+any other type of cigarette.</span>
+<h2 class="mb-2 mt-6 text-lg first:mt-3">Distinction from Slang Usage</h2>
+<span>While "doobie" can indeed be slang for a marijuana cigarette in 
+some contexts, this is not the case here. Lil Nas X's use of "Doobie" as
+ a nickname is rooted in his childhood and personal relationships, not 
+in any reference to substances or British slang for cigarettes.</span><span class="mt-md block"></span>
+<span>In summary, the "hood" calling Lil Nas X "Doobie" is a term of 
+endearment and a personal nickname, not indicative of any reference to 
+cigarettes or substances.</span></div></div></div><div class="ml-sm mt-xs flex max-w-full items-start gap-x-xs"><button type="button" class="focus-visible:bg-offsetPlus dark:focus-visible:bg-offsetPlusDark md:hover:bg-offsetPlus text-textOff dark:text-textOffDark md:hover:text-textMain dark:md:hover:bg-offsetPlusDark  dark:md:hover:text-textMainDark font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out font-sans  select-none items-center relative group/button  justify-center text-center items-center rounded-full cursor-point active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm px-sm font-medium h-8" data-state="closed"><div class="flex items-center min-w-0 justify-center gap-xs"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clipboard" class="svg-inline--fa fa-clipboard fa-fw fa-1x " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"></path></svg><div class="text-align-center relative truncate leading-loose">Copy</div></div></button><a role="button" class="focus-visible:bg-offsetPlus dark:focus-visible:bg-offsetPlusDark md:hover:bg-offsetPlus text-textOff dark:text-textOffDark md:hover:text-textMain dark:md:hover:bg-offsetPlusDark  dark:md:hover:text-textMainDark umami--click--ask_perplexity_redirect font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out font-sans  select-none items-center relative group/button  justify-center text-center items-center rounded-full cursor-point active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm px-sm font-medium h-8" target="_blank" href="https://www.perplexity.ai/search?q=Would%20the%20%22hood%22%20calling%20nas%20x%20%22doobie%22%20be%20indicitative%20of%20what%20the%20british%20used%20to%20call%20cigarettes"><div class="flex items-center min-w-0 justify-center gap-xs"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="arrow-right-from-arc" class="svg-inline--fa fa-arrow-right-from-arc fa-fw fa-1x " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M48 256C48 141.1 141.1 48 256 48c13.3 0 24-10.7 24-24s-10.7-24-24-24C114.6 0 0 114.6 0 256S114.6 512 256 512c13.3 0 24-10.7 24-24s-10.7-24-24-24C141.1 464 48 370.9 48 256zM392.3 134.4c-9.7-9-24.9-8.5-33.9 1.3s-8.5 24.9 1.3 33.9L426.9 232H184c-13.3 0-24 10.7-24 24s10.7 24 24 24H426.9l-67.2 62.4c-9.7 9-10.3 24.2-1.3 33.9s24.2 10.3 33.9 1.3l112-104c4.9-4.5 7.7-10.9 7.7-17.6s-2.8-13-7.7-17.6l-112-104z"></path></svg><div class="text-align-center relative truncate leading-loose">Ask Perplexity</div></div></a></div><div class="mt-sm flex justify-end gap-x-xs"></div></div></div></div><div class="flex w-full p-md md:p-lg border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-transparent"><div class="w-full"><div class="max-w-full text-right"><div class="max-w-full break-words rounded-lg border px-md py-sm text-left shadow-sm [word-break:break-word] inline-block border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-background dark:bg-backgroundDark"><div class="default font-sans text-base text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><div class="prose dark:prose-invert inline leading-normal break-words min-w-0 [word-break:break-word]"><span>ok, hear me out, doobie: weed cigarette, nas x: gay, british term for cigarette:</span></div></div></div></div></div></div><div class="flex w-full p-md md:p-lg justify-end border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-transparent"><div class="w-full flex flex-col justify-start gap-md md:flex-row"><div class="max-w-full text-right"><div class="max-w-full break-words rounded-lg border px-md py-sm text-left shadow-sm [word-break:break-word] border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-offset dark:bg-offsetDark"><div class="light font-sans text-base font-medium text-textOff dark:text-textOffDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark">LLM served by Perplexity Labs</div><div class="default font-sans text-base text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><div class="prose dark:prose-invert inline leading-normal break-words min-w-0 [word-break:break-word]"><span>To clarify the terms and their contexts:</span>
+<h2 class="mb-2 mt-6 text-lg first:mt-3">Doobie</h2>
+<ul class="marker:text-textOff list-disc pl-8">
+<li index="0"><span>The term "doobie" is commonly used as slang for a 
+marijuana cigarette or joint. This is widely recognized in various 
+sources, including Merriam-Webster, Ganjapreneur, and Britannica 
+Dictionary.</span></li>
+</ul>
+<h2 class="mb-2 mt-6 text-lg first:mt-3">Nas X and the Nickname "Doobie"</h2>
+<ul class="marker:text-textOff list-disc pl-8">
+<li index="0"><span>In the context of Lil Nas X, the nickname "Doobie" 
+does not relate to the slang term for a marijuana cigarette. Instead, it
+ is a personal nickname that originated from his childhood, likely due 
+to his fondness for "Scooby Doo" or other personal reasons.</span></li>
+</ul>
+<h2 class="mb-2 mt-6 text-lg first:mt-3">British Term for Cigarette</h2>
+<ul class="marker:text-textOff list-disc pl-8">
+<li index="0"><span>The British term for a cigarette is not "doobie." In
+ British slang, a cigarette is often referred to as a "fag" or simply a 
+"cigarette." The term "doobie" is specifically associated with marijuana
+ cigarettes and is not a common term in British English for regular 
+cigarettes.</span></li>
+</ul>
+<span>In summary:</span>
+<ul class="marker:text-textOff list-disc pl-8">
+<li index="0"><span>"Doobie" primarily refers to a marijuana cigarette.</span></li>
+<li index="1"><span>Lil Nas X's nickname "Doobie" is unrelated to the slang term for a marijuana cigarette.</span></li>
+<li index="2"><span>There is no British term "doobie" for a regular cigarette.</span></li>
+</ul></div></div></div><div class="ml-sm mt-xs flex max-w-full items-start gap-x-xs"><button type="button" class="focus-visible:bg-offsetPlus dark:focus-visible:bg-offsetPlusDark md:hover:bg-offsetPlus text-textOff dark:text-textOffDark md:hover:text-textMain dark:md:hover:bg-offsetPlusDark  dark:md:hover:text-textMainDark font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out font-sans  select-none items-center relative group/button  justify-center text-center items-center rounded-full cursor-point active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm px-sm font-medium h-8" data-state="closed"><div class="flex items-center min-w-0 justify-center gap-xs"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clipboard" class="svg-inline--fa fa-clipboard fa-fw fa-1x " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"></path></svg><div class="text-align-center relative truncate leading-loose">Copy</div></div></button><a role="button" class="focus-visible:bg-offsetPlus dark:focus-visible:bg-offsetPlusDark md:hover:bg-offsetPlus text-textOff dark:text-textOffDark md:hover:text-textMain dark:md:hover:bg-offsetPlusDark  dark:md:hover:text-textMainDark umami--click--ask_perplexity_redirect font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out font-sans  select-none items-center relative group/button  justify-center text-center items-center rounded-full cursor-point active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm px-sm font-medium h-8" target="_blank" href="https://www.perplexity.ai/search?q=ok%2C%20hear%20me%20out%2C%20doobie%3A%20weed%20cigarette%2C%20nas%20x%3A%20gay%2C%20british%20term%20for%20cigarette%3A"><div class="flex items-center min-w-0 justify-center gap-xs"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="arrow-right-from-arc" class="svg-inline--fa fa-arrow-right-from-arc fa-fw fa-1x " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M48 256C48 141.1 141.1 48 256 48c13.3 0 24-10.7 24-24s-10.7-24-24-24C114.6 0 0 114.6 0 256S114.6 512 256 512c13.3 0 24-10.7 24-24s-10.7-24-24-24C141.1 464 48 370.9 48 256zM392.3 134.4c-9.7-9-24.9-8.5-33.9 1.3s-8.5 24.9 1.3 33.9L426.9 232H184c-13.3 0-24 10.7-24 24s10.7 24 24 24H426.9l-67.2 62.4c-9.7 9-10.3 24.2-1.3 33.9s24.2 10.3 33.9 1.3l112-104c4.9-4.5 7.7-10.9 7.7-17.6s-2.8-13-7.7-17.6l-112-104z"></path></svg><div class="text-align-center relative truncate leading-loose">Ask Perplexity</div></div></a></div><div class="mt-sm flex justify-end gap-x-xs"></div></div></div></div><div class="flex w-full p-md md:p-lg border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-transparent"><div class="w-full"><div class="max-w-full text-right"><div class="max-w-full break-words rounded-lg border px-md py-sm text-left shadow-sm [word-break:break-word] inline-block border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-background dark:bg-backgroundDark"><div class="default font-sans text-base text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><div class="prose dark:prose-invert inline leading-normal break-words min-w-0 [word-break:break-word]"><span>ok, but you look at the british term for cigarette, and you look at the fact that he's gay...</span></div></div></div></div></div></div><div class="flex w-full p-md md:p-lg justify-end border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-transparent"><div class="w-full flex flex-col justify-start gap-md md:flex-row"><div class="max-w-full text-right"><div class="max-w-full break-words rounded-lg border px-md py-sm text-left shadow-sm [word-break:break-word] border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-offset dark:bg-offsetDark"><div class="light font-sans text-base font-medium text-textOff dark:text-textOffDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark">LLM served by Perplexity Labs</div><div class="default font-sans text-base text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><div class="prose dark:prose-invert inline leading-normal break-words min-w-0 [word-break:break-word]"><span>To address the intersection of the British term for a cigarette and Lil Nas X's identity, here are some key points:</span>
+<h2 class="mb-2 mt-6 text-lg first:mt-3">British Term for Cigarette: "Fag"</h2>
+<ul class="marker:text-textOff list-disc pl-8">
+<li index="0"><span>In the UK, Ireland, and some other regions, the term
+ "fag" is commonly used as a slang word for a cigarette. This usage is 
+distinct from its other connotations and has been in use since the 
+mid-nineteenth century.</span></li>
+</ul>
+<h2 class="mb-2 mt-6 text-lg first:mt-3">Context and Connotations</h2>
+<ul class="marker:text-textOff list-disc pl-8">
+<li index="0"><span>However, in North America, particularly in the US 
+and Canada, the term "fag" (and its variant "faggot") is predominantly 
+used as a derogatory slur against gay men. This usage is highly 
+offensive and not related to the British slang for cigarettes.</span></li>
+</ul>
+<h2 class="mb-2 mt-6 text-lg first:mt-3">Lil Nas X's Identity</h2>
+<ul class="marker:text-textOff list-disc pl-8">
+<li index="0"><span>Given that Lil Nas X is openly gay, using the term 
+"fag" in a context that could be misconstrued as a slur would be highly 
+inappropriate and offensive. However, if the term is used specifically 
+to refer to a cigarette in a British context, it would not carry the 
+same connotations.</span></li>
+</ul>
+<h2 class="mb-2 mt-6 text-lg first:mt-3">Avoiding Misunderstandings</h2>
+<ul class="marker:text-textOff list-disc pl-8">
+<li index="0"><span>It is crucial to be aware of the different meanings 
+and connotations of words in various regions to avoid misunderstandings 
+or unintentional offense. In the case of "fag," it is important to 
+consider the cultural and geographical context in which it is being 
+used.</span></li>
+</ul>
+<span>In summary:</span>
+<ul class="marker:text-textOff list-disc pl-8">
+<li index="0"><span>The term "fag" can refer to a cigarette in British 
+slang, but it is not appropriate to use this term in North America due 
+to its offensive connotations.</span></li>
+<li index="1"><span>Given Lil Nas X's identity, it is important to be 
+sensitive to the potential for misinterpretation and ensure that any use
+ of the term is clear and respectful.</span></li>
+</ul></div></div></div><div class="ml-sm mt-xs flex max-w-full items-start gap-x-xs"><button type="button" class="focus-visible:bg-offsetPlus dark:focus-visible:bg-offsetPlusDark md:hover:bg-offsetPlus text-textOff dark:text-textOffDark md:hover:text-textMain dark:md:hover:bg-offsetPlusDark  dark:md:hover:text-textMainDark font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out font-sans  select-none items-center relative group/button  justify-center text-center items-center rounded-full cursor-point active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm px-sm font-medium h-8" data-state="closed"><div class="flex items-center min-w-0 justify-center gap-xs"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clipboard" class="svg-inline--fa fa-clipboard fa-fw fa-1x " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"></path></svg><div class="text-align-center relative truncate leading-loose">Copy</div></div></button><a role="button" class="focus-visible:bg-offsetPlus dark:focus-visible:bg-offsetPlusDark md:hover:bg-offsetPlus text-textOff dark:text-textOffDark md:hover:text-textMain dark:md:hover:bg-offsetPlusDark  dark:md:hover:text-textMainDark umami--click--ask_perplexity_redirect font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out font-sans  select-none items-center relative group/button  justify-center text-center items-center rounded-full cursor-point active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm px-sm font-medium h-8" target="_blank" href="https://www.perplexity.ai/search?q=ok%2C%20but%20you%20look%20at%20the%20british%20term%20for%20cigarette%2C%20and%20you%20look%20at%20the%20fact%20that%20he%27s%20gay%2E%2E%2E"><div class="flex items-center min-w-0 justify-center gap-xs"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="arrow-right-from-arc" class="svg-inline--fa fa-arrow-right-from-arc fa-fw fa-1x " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M48 256C48 141.1 141.1 48 256 48c13.3 0 24-10.7 24-24s-10.7-24-24-24C114.6 0 0 114.6 0 256S114.6 512 256 512c13.3 0 24-10.7 24-24s-10.7-24-24-24C141.1 464 48 370.9 48 256zM392.3 134.4c-9.7-9-24.9-8.5-33.9 1.3s-8.5 24.9 1.3 33.9L426.9 232H184c-13.3 0-24 10.7-24 24s10.7 24 24 24H426.9l-67.2 62.4c-9.7 9-10.3 24.2-1.3 33.9s24.2 10.3 33.9 1.3l112-104c4.9-4.5 7.7-10.9 7.7-17.6s-2.8-13-7.7-17.6l-112-104z"></path></svg><div class="text-align-center relative truncate leading-loose">Ask Perplexity</div></div></a></div><div class="mt-sm flex justify-end gap-x-xs"></div></div></div></div><div></div></div></div></div></div></div><div class="sticky bottom-0 z-20 border-t border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-background dark:bg-backgroundDark"><div class="mx-auto max-w-screen-lg md:px-md"><div class="flex flex-col justify-between gap-md p-md md:flex-row md:items-center md:border-x border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-transparent"><div class="flex flex-wrap items-center gap-x-md gap-y-sm md:divide-x border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-transparent"><div class="super font-sans text-base text-super dark:text-superDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="gauge-max" class="svg-inline--fa fa-gauge-max fa-fw " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 464a208 208 0 1 0 0-416 208 208 0 1 0 0 416zM256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zm32 112a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM256 408c-30.9 0-56-25.1-56-56s25.1-56 56-56c10.3 0 19.9 2.8 28.2 7.6l110.2-75.4c10.9-7.5 25.9-4.7 33.4 6.3s4.7 25.9-6.3 33.4L311.3 343.2c.4 2.9 .7 5.8 .7 8.8c0 30.9-25.1 56-56 56zM384 160a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM112 224a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm80-64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0z"></path></svg></div><div class="md:pl-md"><div class="inline default text-[11px] tracking-wide font-mono leading-none uppercase text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark">103.18</div><div class="inline light text-[11px] tracking-wide font-mono leading-none uppercase text-textOff dark:text-textOffDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"> sec to first token</div></div><div class="md:pl-md"><div class="inline default text-[11px] tracking-wide font-mono leading-none uppercase text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark">36 </div><div class="inline light text-[11px] tracking-wide font-mono leading-none uppercase text-textOff dark:text-textOffDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark">tokens/sec</div></div><div class="md:pl-md"><div class="inline default text-[11px] tracking-wide font-mono leading-none uppercase text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark">353</div><div class="inline light text-[11px] tracking-wide font-mono leading-none uppercase text-textOff dark:text-textOffDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"> tokens</div></div><div class="pl-md"><div class="inline default text-[11px] tracking-wide font-mono leading-none uppercase text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark">9.68</div><div class="inline light text-[11px] tracking-wide font-mono leading-none uppercase text-textOff dark:text-textOffDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"> <!-- -->sec</div></div></div><div class="md:pl-md"><div class="inline light text-[11px] tracking-wide font-mono leading-none uppercase text-textOff dark:text-textOffDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><div><div class="default font-sans text-sm text-textMain dark:text-textMainDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><div class="relative flex items-center"><select id="lamma-select" class="border-borderMain/75 dark:border-borderMainDark outline-super dark:outline-superDark ring-borderMain/75 dark:ring-borderMainDark p-sm bg-background dark:bg-offsetDark pr-lg w-full appearance-none rounded border transition duration-300 focus:outline-none cursor-pointer hover:ring-1"><option value="llama-3.1-sonar-large-128k-online" selected="selected">llama-3.1-sonar-large-128k-online</option><option value="llama-3.1-sonar-small-128k-online">llama-3.1-sonar-small-128k-online</option><option value="llama-3.1-sonar-large-128k-chat">llama-3.1-sonar-large-128k-chat</option><option value="llama-3.1-sonar-small-128k-chat">llama-3.1-sonar-small-128k-chat</option><option value="llama-3.1-8b-instruct">llama-3.1-8b-instruct</option><option value="llama-3.1-70b-instruct">llama-3.1-70b-instruct</option><option value="/models/LiquidCloud">Liquid LFM 40B</option></select><div class="right-sm pointer-events-none absolute light font-sans text-sm text-textOff dark:text-textOffDark selection:bg-super/50 selection:text-textMain dark:selection:bg-superDuper/10 dark:selection:text-superDark"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z"></path></svg></div></div></div></div></div></div></div></div><div class="mx-auto max-w-screen-lg md:px-md"><div class="border-t px-md py-md md:border-x border-borderMain/50 ring-borderMain/50 divide-borderMain/50 dark:divide-borderMainDark/50  dark:ring-borderMainDark/50 dark:border-borderMainDark/50 bg-transparent"><div class="flex items-center gap-x-sm"><button aria-label="Clear Chat" type="button" class="focus-visible:bg-offsetPlus dark:focus-visible:bg-offsetPlusDark md:hover:bg-offsetPlus text-textOff dark:text-textOffDark md:hover:text-textMain dark:md:hover:bg-offsetPlusDark  dark:md:hover:text-textMainDark font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out font-sans  select-none items-center relative group/button  justify-center text-center items-center rounded-full cursor-point active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-base aspect-square h-10" data-state="closed"><div class="flex items-center min-w-0 justify-center gap-xs"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="trash" class="svg-inline--fa fa-trash fa-fw fa-lg " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M177.1 48h93.7c2.7 0 5.2 1.3 6.7 3.6l19 28.4h-145l19-28.4c1.5-2.2 4-3.6 6.7-3.6zM354.2 80L317.5 24.9C307.1 9.4 289.6 0 270.9 0H177.1c-18.7 0-36.2 9.4-46.6 24.9L93.8 80H80.1 32 24C10.7 80 0 90.7 0 104s10.7 24 24 24H35.6L59.6 452.7c2.5 33.4 30.3 59.3 63.8 59.3H324.6c33.5 0 61.3-25.9 63.8-59.3L412.4 128H424c13.3 0 24-10.7 24-24s-10.7-24-24-24h-8H367.9 354.2zm10.1 48L340.5 449.2c-.6 8.4-7.6 14.8-16 14.8H123.4c-8.4 0-15.3-6.5-16-14.8L83.7 128H364.3z"></path></svg></div></button><div class="grow"><div class="rounded-full"><div class="items-center flex w-full outline-none focus:outline-none focus:ring-borderMain font-sans flex items-center dark:bg-offsetDark dark:text-textMainDark dark:placeholder-textOffDark dark:border-borderMainDark dark:focus:ring-borderMainDark selection:bg-superDuper selection:text-textMain duration-200 transition-all bg-background border text-textMain border-borderMain focus:ring-1 placeholder-textOff rounded-t-[32px] rounded-b-[32px] py-sm px-sm"><div class="bg-background dark:bg-offsetDark flex rounded-l-lg order-0"></div><div class="flex-grow flex-shrink p-sm rounded-full order-1 overflow-hidden relative flex h-full w-full"><textarea autofocus="" placeholder="Ask anything..." class="overflow-auto max-h-[45vh] lg:max-h-[40vh] sm:max-h-[25vh] outline-none w-full font-sans caret-superDuper resize-none selection:bg-superDuper selection:text-textMain dark:bg-offsetDark dark:text-textMainDark dark:placeholder-textOffDark bg-background text-textMain placeholder-textOff scrollbar-thumb-idle dark:scrollbar-thumb-idleDark scrollbar-thin scrollbar-track-transparent" autocomplete="off" data-1p-ignore="true" style="height: 24px !important;"></textarea></div><div class="bg-background dark:bg-offsetDark flex items-center space-x-2 justify-self-end rounded-full order-2"><button aria-label="Submit" type="button" class="bg-idle text-textOff dark:bg-idleDark dark:text-textOffDark font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out font-sans  select-none items-center relative group/button  justify-center text-center items-center rounded-full cursor-default opacity-50 whitespace-nowrap inline-flex text-sm aspect-square h-8" disabled="disabled"><div class="flex items-center min-w-0 justify-center gap-xs"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="arrow-up" class="svg-inline--fa fa-arrow-up fa-fw fa-1x " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M209.4 39.4C204.8 34.7 198.6 32 192 32s-12.8 2.7-17.4 7.4l-168 176c-9.2 9.6-8.8 24.8 .8 33.9s24.8 8.8 33.9-.8L168 115.9V456c0 13.3 10.7 24 24 24s24-10.7 24-24V115.9L342.6 248.6c9.2 9.6 24.3 9.9 33.9 .8s9.9-24.3 .8-33.9l-168-176z"></path></svg></div></button></div></div></div></div></div></div></div></div></div></div></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0","hostname":"labs.perplexity.ai"},"__N_SSP":true},"page":"/","query":{},"buildId":"O0jFXZC-xGFJ9S2-dqZLm","isFallback":false,"isExperimentalCompile":false,"gssp":true,"scriptLoader":[]}</script><script defer="defer" src="Perplexity%20Labs_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;8d928811e8186a4d&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2024.10.4&quot;,&quot;token&quot;:&quot;92730c73a9e747fbb6a25e1d6657122d&quot;}" crossorigin="anonymous"></script>
+<textarea tabindex="-1" aria-hidden="true" style="min-height: 0px !important; max-height: none !important; height: 0px !important; visibility: hidden !important; overflow: hidden !important; position: absolute !important; z-index: -1000 !important; top: 0px !important; right: 0px !important; border-width: 0px; box-sizing: border-box; font-family: &quot;__fkGroteskNeue_a82850&quot;, &quot;__fkGroteskNeue_Fallback_a82850&quot;, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica Neue, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-weight: 400; letter-spacing: normal; line-height: 24px; padding: 0px; tab-size: 4; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none; width: 844.8px; word-break: normal;">x</textarea><script src="Perplexity%20Labs_files/342251b.js" data-website-id="618b72f5-e5be-4949-990c-2a122864bb22" data-nscript="afterInteractive"></script><next-route-announcer><p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; top: 0px; width: 1px; white-space: nowrap; overflow-wrap: normal;"></p></next-route-announcer><div id="zeit-ui-clipboard" style="white-space: pre;"></div></body></html>
