@@ -14,7 +14,7 @@ class Node:
         log_indent = f'Indent level {level}: {self.name}'
         print(log_indent)
         if self.type == 'file':
-            relative_path = os.path.relpath(self.path, start=base_url)
+            relative_path = os.path.relpath(self.path, start=base_url).replace('../', '')
             return f'{indent}<li><a href="{relative_path}">{self.name}</a> ({self.size} bytes)</li>\n'
         else:
             children_html = ''.join([child.to_html(level + 1, base_url=base_url) for child in self.children])

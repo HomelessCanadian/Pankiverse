@@ -1,3 +1,5 @@
+// directoryReqHandler.js for Pankiverse/HTML directory injection handling
+// Copyright (c) 2024 llama-3.1-sonar-large-128k-online, GPT-4
 document.addEventListener('DOMContentLoaded', function() {
     function createFileTree(data, parentElement) {
         if (!data || !data.children) {
