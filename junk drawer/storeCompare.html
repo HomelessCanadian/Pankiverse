@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredient Comparison</title>
+    <style>
+        .store-selector {
+            margin-bottom: 20px;
+        }
+        .ingredient-lists {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .ingredient-list {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 40%;
+        }
+        .search-container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="search-term" placeholder="Enter a search term">
+        <button id="search-button">Search (broken)</button>
+    </div>
+
+    <div class="store-selector">
+        <label for="store-selector">Choose stores: </label>
+        <div id="store-checkboxes">
+            <input type="checkbox" id="walmart-checkbox" value="walmart">
+            <label for="walmart-checkbox">Walmart</label><br>
+            <input type="checkbox" id="kroger-checkbox" value="kroger">
+            <label for="kroger-checkbox">Kroger</label><br>
+            <input type="checkbox" id="meijer-checkbox" value="meijer">
+            <label for="meijer-checkbox">Meijer</label><br>
+            <input type="checkbox" id="aldi-checkbox" value="aldi">
+            <label for="aldi-checkbox">Aldi</label><br>
+            <input type="checkbox" id="publix-checkbox" value="publix">
+            <label for="publix-checkbox">Publix</label><br>
+            <input type="checkbox" id="albertsons-checkbox" value="albertsons">
+            <label for="albertsons-checkbox">Albertsons</label><br>
+            <input type="checkbox" id="custom-checkbox" value="custom">
+            <label for="custom-checkbox">Custom Store</label>
+            <div id="custom-store-fields" style="display:none;">
+                <label for="custom-store-name">Custom Store Name:</label>
+                <input type="text" id="custom-store-name" />
+                <label for="custom-store-url">Custom Store Search URL:</label>
+                <input type="text" id="custom-store-url" />
+                <button id="save-custom-store">Save Custom Store</button>
+                <button id="cancel-custom-store">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ingredient-lists" id="ingredient-lists-container"></div>
+
+    <script src="/Scripts/comparisonHandler.js"></script>
+</body>
+</html>

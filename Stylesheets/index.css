@@ -88,3 +88,11 @@ li {
 ul ul li {
     padding-left: 1.5em; /* More indentation for nested lists */
 }
+#construction-banner {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 2px dashed #ffc107;
+}

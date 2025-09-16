@@ -22,14 +22,14 @@ body {
   }
             #warning-banner {
             background-color: #ffcccc;
-            padding: 10px;
+            padding: 1px;
             text-align: center;
             font-weight: bold;
         }
         #warning-banner {
           position: relative;
           /* Adjust the height and width as needed */
-          height: 100px; /* Example height */
+          height: 50px; /* Example height */
           width: 100%; /* Full width */
           display: flex;
           align-items: center;
@@ -37,11 +37,11 @@ body {
           background-color: #f0f0f0; /* Example background color */
       }
       
-      #warning-banner strong, #warning-banner noscript {
+     /* #warning-banner strong, #warning-banner noscript {
           position: absolute;
           z-index: 1;
           color: #000;
-      }
+      } */
       
       #banner-iframe-container {
           position: absolute;

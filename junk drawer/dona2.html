@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Form</title>
+    <link rel="stylesheet" href="/Stylesheets//don8.css">
+    <script src="/Scripts/baseURL.js"></script>
+</head>
+<body>
+    <div id="warning-banner">
+        <strong>Warning:</strong> This file was generated using Perplexity AI & Copilot. 27 Sep 2024
+        <noscript>
+            <span class="javascript-warning">JavaScript is disabled. Some features may not work correctly.</span>
+        </noscript>
+  </div>
+    <header class="banner">
+<!--        <div class="container"> 
+            <nav class="nav-buttons"> 
+                <a href="/index.html">
+                    <img src="https://logosandtypes.com/wp-content/uploads/2020/08/xerox.svg" alt="Home" class="logo"> 
+                </a>
+                <button class="nav-button">About</button> 
+                <button class="nav-button">Services</button> 
+                <button class="nav-button">Contact</button> 
+            </nav>
+        </div>  -->
+        
+    </header>
+    <form>
+        <h2>Make a Donation</h2>
+        <div>
+            <label for="dollars">Dollars:</label>
+            
+            <!-- Four dropdown menus for each digit of the dollar amount -->
+            <select id="dollarThousands" name="dollarThousands">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+            
+            <select id="dollarHundreds" name="dollarHundreds">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+            
+            <select id="dollarTens" name="dollarTens">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+            
+            <select id="dollarOnes" name="dollarOnes">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          
+            <label for="cents">Cents:</label>
+            
+        <!-- Two dropdown menus for each digit of the cent amount -->
+            <select id="centTens" name="centTens">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+            
+            <select id="centOnes" name="centOnes">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </div> 
+          
+        <div>
+          <label for="cardType">Credit Card Type:</label>
+          <select id="cardType" name="cardType">
+            <option value="Visa">Visa</option>
+            <option value="Mastercard">Mastercard</option>
+            <option value="Amex">American Express</option>
+          </select>
+        </div>
+      
+        <div>
+          <label for="cardNumber">Credit Card Number:</label>
+          <div style="display:flex; gap: 5px;">
+            <!-- 16 digits for credit card number -->
+            <select id="cardNumber1" name="cardNumber1">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          
+            <select id="cardNumber2" name="cardNumber2">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          
+            <select id="cardNumber3" name="cardNumber3">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          
+            <select id="cardNumber4" name="cardNumber4">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          
+            <select id="cardNumber5" name="cardNumber5">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          
+            <select id="cardNumber6" name="cardNumber6">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          
+            <select id="cardNumber7" name="cardNumber7">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          
+            <select id="cardNumber8" name="cardNumber8">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          
+            <select id="cardNumber9" name="cardNumber9">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          
+            <select id="cardNumber10" name="cardNumber10">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          
+            <select id="cardNumber11" name="cardNumber11">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          
+            <select id="cardNumber12" name="cardNumber12">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          
+            <select id="cardNumber13" name="cardNumber13">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          
+            <select id="cardNumber14" name="cardNumber14">
+                <option value="">--</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+              </select>
+    
+              <select id="cardNumber15" name="cardNumber15">
+                <option value="">--</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+              </select>
+    
+              <select id="cardNumber16" name="cardNumber16">
+                <option value="">--</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+              </select>
+        </div>
+      
+        <div>
+            <label for="expirationMonth">Expiration Month:</label>
+            
+            <!-- Four dropdown menus for the month -->
+            <select id="monthDigit1" name="monthDigit1">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+            
+            <select id="monthDigit2" name="monthDigit2">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+            
+            <label for="expirationYear">Expiration Year:</label>
+            
+            <!-- Four dropdown menus for the year -->
+            <select id="yearDigit1" name="yearDigit1">
+              <option value="">--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+            
+            <select id="yearDigit2" name="yearDigit2">
+              <option value="">--</option>
+              <option value="9">9</option>
+              <option value="0">0</option>
+            </select>
+          
+            <select id="yearDigit3" name="yearDigit3">
+                <option value="">--</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            
+            <select id="yearDigit4" name="yearDigit4">
+                <option value="">--</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+          </div>
+          
+      
+        <div>
+          <label for="cvv">CVV:</label>
+          <div style="display:flex; gap: 5px;">
+            <!-- 3 digits for CVV -->
+            <select id="cvv1" name="cvv1">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+            <select id="cvv2" name="cvv2">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+            <select id="cvv3" name="cvv3">
+              <option value="">--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </div>
+        </div>
+      
+        <div>
+            <label for="nameOnCard">Name on Card:</label>
+            <div style="display:flex; gap: 5px;">
+              <!-- 16 characters for first name -->
+               <label for="firstName">First name:</label>
+              <select id="firstName1" name="firstName1">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="firstName2" name="firstName2">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="firstName3" name="firstName3">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="firstName4" name="firstName4">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="firstName5" name="firstName5">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="firstName6" name="firstName6">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="firstName7" name="firstName7">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="firstName8" name="firstName8">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="firstName9" name="firstName9">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="firstName10" name="firstName10">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="firstName11" name="firstName11">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="firstName12" name="firstName12">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="firstName13" name="firstName13">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="firstName14" name="firstName14">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="firstName15" name="firstName15">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="firstName16" name="firstName16">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <label for="Middle initial">Middle inintial:</label>
+              <!-- 1 character for middle initial -->
+              <select id="middleInitial" name="middleInitial">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <label for="lastName">Last name:</label>
+              <!-- 16 characters for last name -->
+              <select id="lastName1" name="lastName1">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="lastName2" name="lastName2">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="lastName3" name="lastName3">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="lastName4" name="lastName4">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="lastName5" name="lastName5">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="lastName6" name="lastName6">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="lastName7" name="lastName7">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="lastName8" name="lastName8">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="lastName9" name="lastName9">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="lastName10" name="lastName10">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="lastName11" name="lastName11">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="lastName12" name="lastName12">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="lastName13" name="lastName13">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="lastName14" name="lastName14">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="lastName15" name="lastName15">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+              <select id="lastName16" name="lastName16">
+                
+      <option value="">--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+      <option value="K">K</option>
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="N">N</option>
+      <option value="O">O</option>
+      <option value="P">P</option>
+      <option value="Q">Q</option>
+      <option value="R">R</option>
+      <option value="S">S</option>
+      <option value="T">T</option>
+      <option value="U">U</option>
+      <option value="V">V</option>
+      <option value="W">W</option>
+      <option value="X">X</option>
+      <option value="Y">Y</option>
+      <option value="Z">Z</option>
+      <option value="Á">Á</option>
+      <option value="É">É</option>
+      <option value="Í">Í</option>
+      <option value="Ó">Ó</option>
+      <option value="Ú">Ú</option>
+      <option value="Ñ">Ñ</option>
+      <option value="Ü">Ü</option>
+      <option value="Ç">Ç</option>
+      <option value="æ">æ</option>
+      <option value="ø">ø</option>
+      <option value="å">å</option>
+      <option value="ß">ß</option>
+      <option value="ö">ö</option>
+      <option value="ä">ä</option>
+      <option value="ë">ë</option>
+    
+    
+              </select>
+            </div>
+          </div>
+          
+      
+        <button type="submit">Donate Now</button>
+      </form>
+      <script src="/Scripts/bannerPride.js"></script>
+      <script src="/Scripts/noscriptWarning.js"></script>
+</body>
+</html>
